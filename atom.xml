@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fishszh.github.io/"/>
-  <updated>2020-06-07T16:41:57.649Z</updated>
+  <updated>2020-06-08T08:06:18.104Z</updated>
   <id>http://fishszh.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>vscode 远程开发</title>
-    <link href="http://fishszh.github.io/2020/06/09/ml/test/"/>
-    <id>http://fishszh.github.io/2020/06/09/ml/test/</id>
+    <link href="http://fishszh.github.io/2020/06/09/vs-code/vscode-yuan-cheng-kai-fa-pei-zhi/"/>
+    <id>http://fishszh.github.io/2020/06/09/vs-code/vscode-yuan-cheng-kai-fa-pei-zhi/</id>
     <published>2020-06-08T16:00:00.000Z</published>
-    <updated>2020-06-07T16:41:57.649Z</updated>
+    <updated>2020-06-08T08:06:18.104Z</updated>
     
     <summary type="html">
     
@@ -29,22 +29,194 @@
       
         
         
-          &lt;h1 id=&quot;VScode-远程开发&quot;&gt;&lt;a href=&quot;#VScode-远程开发&quot; class=&quot;headerlink&quot; title=&quot;VScode 远程开发&quot;&gt;&lt;/a&gt;VScode
+          &lt;h1 id=&quot;VScode-远程开发配置&quot;&gt;&lt;a href=&quot;#VScode-远程开发配置&quot; class=&quot;headerlink&quot; title=&quot;VScode 远程开发配置&quot;&gt;&lt;/a&gt;VScode
         
       
     
     </summary>
     
+    
+      <category term="VS Code" scheme="http://fishszh.github.io/categories/VS-Code/"/>
+    
+    
+      <category term="VS Code" scheme="http://fishszh.github.io/tags/VS-Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据预处理</title>
+    <link href="http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/"/>
+    <id>http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-08T10:59:41.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数据预处理&quot;&gt;&lt;a href=&quot;#数据预处理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
+    
+      <category term="数据处理" scheme="http://fishszh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的类</title>
+    <link href="http://fishszh.github.io/2020/06/02/python/python-zhong-de-lei/"/>
+    <id>http://fishszh.github.io/2020/06/02/python/python-zhong-de-lei/</id>
+    <published>2020-06-01T16:00:00.000Z</published>
+    <updated>2020-06-08T11:08:54.874Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-新式类和旧式类&quot;&gt;&lt;a href=&quot;#1-新式类和旧式类&quot; class=&quot;headerlink&quot; title=&quot;1. 新式类和旧式类&quot;&gt;&lt;/a&gt;1. 新式类和旧式类&lt;/h2&gt;&lt;p&gt;这篇文章很好的介绍了新式类的特性: &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="类" scheme="http://fishszh.github.io/tags/%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 代码规范</title>
+    <link href="http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/"/>
+    <id>http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/</id>
+    <published>2019-08-20T16:00:00.000Z</published>
+    <updated>2020-06-08T08:18:52.754Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。&lt;/p&gt;
+&lt;p&gt;参考文献:  &lt;/p&gt;
+&lt;p&gt;\1. PEP 8 – Style Guide for Python Code &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="代码规范" scheme="http://fishszh.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 并行处理</title>
+    <link href="http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/"/>
+    <id>http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/</id>
+    <published>2019-08-20T16:00:00.000Z</published>
+    <updated>2020-06-08T09:16:52.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参考资料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.python.org/2/library/multiprocessing.html?highlight=multipro#&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="并行" scheme="http://fishszh.github.io/tags/%E5%B9%B6%E8%A1%8C/"/>
+    
+      <category term="多线程" scheme="http://fishszh.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>画图相关</title>
+    <link href="http://fishszh.github.io/2019/08/07/python/matplotlib/"/>
+    <id>http://fishszh.github.io/2019/08/07/python/matplotlib/</id>
+    <published>2019-08-06T16:00:00.000Z</published>
+    <updated>2020-06-08T08:50:35.022Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;图片中字体问题&quot;&gt;&lt;a href=&quot;#图片中字体问题&quot; class=&quot;headerlink&quot; title=&quot;图片中字体问题&quot;&gt;&lt;/a&gt;图片中字体问题&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="matplotlib" scheme="http://fishszh.github.io/tags/matplotlib/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python正则表达</title>
+    <link href="http://fishszh.github.io/2019/06/03/python/python-zheng-zai-biao-da/"/>
+    <id>http://fishszh.github.io/2019/06/03/python/python-zheng-zai-biao-da/</id>
+    <published>2019-06-02T16:00:00.000Z</published>
+    <updated>2020-06-08T11:22:49.138Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;非打印字符&quot;&gt;&lt;a href=&quot;#非打印字符&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
     
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://fishszh.github.io/2020/06/07/hello-world/"/>
-    <id>http://fishszh.github.io/2020/06/07/hello-world/</id>
-    <published>2020-06-07T13:50:58.804Z</published>
-    <updated>2020-06-07T13:50:58.804Z</updated>
+    <title>Python中的单例模式</title>
+    <link href="http://fishszh.github.io/2019/06/01/python/python-zhong-de-dan-li-mo-shi/"/>
+    <id>http://fishszh.github.io/2019/06/01/python/python-zhong-de-dan-li-mo-shi/</id>
+    <published>2019-05-31T16:00:00.000Z</published>
+    <updated>2020-06-08T11:10:35.715Z</updated>
     
     <summary type="html">
     
@@ -52,12 +224,15 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;blockquote&gt;
+&lt;p&gt;单例模式是一种常用的软件设计模式。在它的核心结构中只包含一个被称为单例类的特殊类。通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源。如果希望在系统中某个类的对象只能存在一个，单例模式是最好的
         
       
     
     </summary>
     
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
     
     
   </entry>
