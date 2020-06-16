@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fishszh.github.io/"/>
-  <updated>2020-06-08T08:06:18.104Z</updated>
+  <updated>2020-06-15T14:34:33.647Z</updated>
   <id>http://fishszh.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>损失函数</title>
+    <link href="http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/"/>
+    <id>http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/</id>
+    <published>2020-06-14T16:00:00.000Z</published>
+    <updated>2020-06-15T14:34:33.647Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="损失函数" scheme="http://fishszh.github.io/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>vscode 远程开发</title>
@@ -48,7 +67,7 @@
     <link href="http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/"/>
     <id>http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/</id>
     <published>2020-06-05T16:00:00.000Z</published>
-    <updated>2020-06-08T10:59:41.684Z</updated>
+    <updated>2020-06-13T03:30:26.844Z</updated>
     
     <summary type="html">
     
@@ -69,6 +88,66 @@
       <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
     
       <category term="数据处理" scheme="http://fishszh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据预处理 2</title>
+    <link href="http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/"/>
+    <id>http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-13T03:41:03.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这里针对具体的应用场景，来总结一些需要注意的地方。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;仅仅是随笔，并不严谨！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;文本预处理中&quot;&gt;&lt;a href=&quot;#文本预处理中&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
+    
+      <category term="数据处理" scheme="http://fishszh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TensorFlow 2.0 Notes</title>
+    <link href="http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/"/>
+    <id>http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-16T14:51:29.639Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Tensorflow-中的运算符操作&quot;&gt;&lt;a href=&quot;#Tensorflow-中的运算符操作&quot; class=&quot;headerlink&quot; title=&quot;Tensorflow 中的运算符操作&quot;&gt;&lt;/a&gt;Tensorflow
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
     
   </entry>
   
@@ -96,6 +175,37 @@
     
     
       <category term="类" scheme="http://fishszh.github.io/tags/%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 并行处理</title>
+    <link href="http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/"/>
+    <id>http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/</id>
+    <published>2019-08-20T16:00:00.000Z</published>
+    <updated>2020-06-16T06:28:27.383Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参考资料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.python.org/2/library/multiprocessing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;multiprocessing—
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="并行" scheme="http://fishszh.github.io/tags/%E5%B9%B6%E8%A1%8C/"/>
+    
+      <category term="多线程" scheme="http://fishszh.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
@@ -129,42 +239,11 @@
   </entry>
   
   <entry>
-    <title>Python 并行处理</title>
-    <link href="http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/"/>
-    <id>http://fishszh.github.io/2019/08/21/python/python-duo-xian-cheng/</id>
-    <published>2019-08-20T16:00:00.000Z</published>
-    <updated>2020-06-08T09:16:52.889Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;参考资料:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.python.org/2/library/multiprocessing.html?highlight=multipro#&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
-    
-    
-      <category term="并行" scheme="http://fishszh.github.io/tags/%E5%B9%B6%E8%A1%8C/"/>
-    
-      <category term="多线程" scheme="http://fishszh.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>画图相关</title>
     <link href="http://fishszh.github.io/2019/08/07/python/matplotlib/"/>
     <id>http://fishszh.github.io/2019/08/07/python/matplotlib/</id>
     <published>2019-08-06T16:00:00.000Z</published>
-    <updated>2020-06-08T08:50:35.022Z</updated>
+    <updated>2020-06-15T14:29:42.347Z</updated>
     
     <summary type="html">
     

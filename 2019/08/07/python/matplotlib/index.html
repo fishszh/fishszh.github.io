@@ -473,8 +473,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="图片中字体问题"><a href="#图片中字体问题" class="headerlink" title="图片中字体问题"></a>图片中字体问题</h2><pre class="line-numbers language-python"><code class="language-python">plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> <span class="token operator">*</span>usetex<span class="token operator">*=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'font'</span><span class="token punctuation">,</span> <span class="token operator">*</span>family<span class="token operator">*=</span><span class="token string">'serif'</span><span class="token punctuation">)</span>
+                <h2 id="图片中字体问题"><a href="#图片中字体问题" class="headerlink" title="图片中字体问题"></a>图片中字体问题</h2><pre class="line-numbers language-python"><code class="language-python">plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> usetex<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'font'</span><span class="token punctuation">,</span> family<span class="token operator">=</span><span class="token string">'serif'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.size'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">15</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="多线条颜色设置"><a href="#多线条颜色设置" class="headerlink" title="多线条颜色设置"></a>多线条颜色设置</h2><pre class="line-numbers language-python"><code class="language-python">colors <span class="token operator">=</span> plt<span class="token punctuation">.</span>get_cmap<span class="token punctuation">(</span><span class="token string">'brg'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="eps-不透明度"><a href="#eps-不透明度" class="headerlink" title="eps 不透明度"></a>eps 不透明度</h2><p>先保存pdf再转eps</p>
@@ -589,24 +589,22 @@ plt<span class="token punctuation">.</span>rcParams<span class="token punctuatio
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/21/python/python-duo-xian-cheng/">
+                <a href="/2019/08/21/python/python-dai-ma-gui-fan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python 并行处理">
+                        <img src="/medias/featureimages/a17.jpg" class="responsive-img" alt="Python 代码规范">
                         
-                        <span class="card-title">Python 并行处理</span>
+                        <span class="card-title">Python 代码规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考资料:
+                            良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。
+参考文献:  
+\1. PEP 8 – Style Guide for Python Code https://www.python.org/dev/peps/pep-0008  
 
-multiprocessing— Process-based “threading” interface  
-https://python.freelycode.com/contribution/detail/1364
-
-简介
                         
                     </div>
                     <div class="publish-info">
@@ -628,12 +626,8 @@ https://python.freelycode.com/contribution/detail/1364
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B9%B6%E8%A1%8C/">
-                        <span class="chip bg-color">并行</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                        <span class="chip bg-color">代码规范</span>
                     </a>
                     
                 </div>

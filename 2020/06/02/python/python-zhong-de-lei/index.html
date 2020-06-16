@@ -766,20 +766,22 @@ a<span class="token punctuation">.</span>m3<span class="token punctuation">(</sp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/06/tensorflow/shu-ju-yu-chu-li/">
+                <a href="/2020/06/06/tensorflow/tf2-notes/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a0.jpg" class="responsive-img" alt="数据预处理">
+                        <img src="/medias/featureimages/a2.jpg" class="responsive-img" alt="TensorFlow 2.0 Notes">
                         
-                        <span class="card-title">数据预处理</span>
+                        <span class="card-title">TensorFlow 2.0 Notes</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据预处理数据的质量至关重要，可能直接决定了模型的预测和泛化能力。它涉及很多因素，包括：准确性、完整性、一致性、时效性、可信性和解释性。
-而现实中我们拿到的数据可能包含了大量的缺失值，可能包含大量的噪音，也可能因为人工录入错误导致有异常存在
+                            Tensorflow 中的运算符操作
+运算符只支持同类型数据操作这是运算速度的保障
+类型变换可以通过tf.cast(x, dtype, name=None)外部操作，不改变，原变量，有返回值
+Variable 变量重新赋值，可以调用x.as
                         
                     </div>
                     <div class="publish-info">
@@ -805,10 +807,6 @@ a<span class="token punctuation">.</span>m3<span class="token punctuation">(</sp
                         <span class="chip bg-color">TensorFlow</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -820,22 +818,24 @@ a<span class="token punctuation">.</span>m3<span class="token punctuation">(</sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/21/python/python-dai-ma-gui-fan/">
+                <a href="/2019/08/21/python/python-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a17.jpg" class="responsive-img" alt="Python 代码规范">
+                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python 并行处理">
                         
-                        <span class="card-title">Python 代码规范</span>
+                        <span class="card-title">Python 并行处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。
-参考文献:  
-\1. PEP 8 – Style Guide for Python Code https://www.python.org/dev/peps/pep-0008  
+                            参考资料:
 
+multiprocessing— Process-based “threading” interface  
+https://python.freelycode.com/contribution/detail/1364
+
+简介
                         
                     </div>
                     <div class="publish-info">
@@ -857,8 +857,12 @@ a<span class="token punctuation">.</span>m3<span class="token punctuation">(</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                        <span class="chip bg-color">代码规范</span>
+                    <a href="/tags/%E5%B9%B6%E8%A1%8C/">
+                        <span class="chip bg-color">并行</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">多线程</span>
                     </a>
                     
                 </div>
