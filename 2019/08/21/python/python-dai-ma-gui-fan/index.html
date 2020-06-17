@@ -478,6 +478,20 @@
 <p>\1. PEP 8 – Style Guide for Python Code <a href="https://www.python.org/dev/peps/pep-0008" target="_blank" rel="noopener">https://www.python.org/dev/peps/pep-0008</a>  </p>
 <p>\2. Google开源项目风格指南: <a href="https://zh-google-styleguide.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://zh-google-styleguide.readthedocs.io/en/latest/</a>  </p>
 <p>\3. Python开发规范 <a href="https://www.jianshu.com/p/d414e90dc953" target="_blank" rel="noopener">https://www.jianshu.com/p/d414e90dc953</a>  </p>
+<h2 id="函数注释样例"><a href="#函数注释样例" class="headerlink" title="函数注释样例"></a>函数注释样例</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    Some description of the function.
+
+    Parameters
+    ----------
+    param1: float, default=1.0
+        Description of the parameter
+
+    param2: {'linear', 'we'}, default='linear'
+        Description.
+
+    '''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
