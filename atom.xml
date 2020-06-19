@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fishszh.github.io/"/>
-  <updated>2020-06-15T14:34:33.647Z</updated>
+  <updated>2020-06-18T13:42:19.756Z</updated>
   <id>http://fishszh.github.io/</id>
   
   <author>
@@ -21,9 +21,20 @@
     <link href="http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/"/>
     <id>http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/</id>
     <published>2020-06-14T16:00:00.000Z</published>
-    <updated>2020-06-15T14:34:33.647Z</updated>
+    <updated>2020-06-18T13:42:19.756Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;声明&lt;/strong&gt;：&lt;br&gt;本文内容参考了，网络中的一些资源，但时间久远，忘记了出处，所以有些没有指出参考文献。&lt;br&gt;本文也仅作为记录自己学习笔记。若原创觉得有异议请告知。&lt;br&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
     
     </summary>
     
@@ -129,7 +140,7 @@
     <link href="http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/"/>
     <id>http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/</id>
     <published>2020-06-05T16:00:00.000Z</published>
-    <updated>2020-06-16T14:51:29.639Z</updated>
+    <updated>2020-06-19T13:47:30.485Z</updated>
     
     <summary type="html">
     
@@ -137,7 +148,8 @@
       
         
         
-          &lt;h2 id=&quot;Tensorflow-中的运算符操作&quot;&gt;&lt;a href=&quot;#Tensorflow-中的运算符操作&quot; class=&quot;headerlink&quot; title=&quot;Tensorflow 中的运算符操作&quot;&gt;&lt;/a&gt;Tensorflow
+          &lt;p&gt;这篇文章，主要在于记录，自己对TensorFlow这个框架的不断理解的过程。记载了一些认为有必要，写下来提醒自己的问题或者方法，也方便日后自己查阅。&lt;/p&gt;
+&lt;h2 id=&quot;1-Tensorflow-中的运算符操作&quot;&gt;&lt;a
         
       
     

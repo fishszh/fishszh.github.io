@@ -473,7 +473,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <blockquote>
+<p><strong>声明</strong>：<br>本文内容参考了，网络中的一些资源，但时间久远，忘记了出处，所以有些没有指出参考文献。<br>本文也仅作为记录自己学习笔记。若原创觉得有异议请告知。<br>参考资料：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/zongfa/p/9774315.html" target="_blank" rel="noopener">正则化如何防止过拟合</a></li>
+</ul>
+</blockquote>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>在实际应用时，如果样本容量不远远大于样本的特征维度，很可能<strong>造成过拟合</strong>，对这种情况，<br>我们有下面三个<strong>解决方式</strong>：</p>
+<ol>
+<li>加数据</li>
+<li>特征选择（降低特征维度）如 PCA 算法。</li>
+<li>正则化</li>
+<li>训练过程加入验证集<br>validation data的用途很多：<ul>
+<li>根据validation data上的accuracy来确定early stopping的epoch大小</li>
+<li>更新learning rate</li>
+</ul>
+</li>
+</ol>
+<p>过拟合往往是由拟合系数过大导致的。为了拟合样本中每一个点，由于噪声的存在，导致拟合函数波动很大。<br>一般情况下由于自变量的值可大可小，所以只有系数足够大，才能保证倒数值很大，从而拟合函数波动很大，<br>进而就导致了过拟合。</p>
+<p>正则化一般是在损失函数上加入正则化项（表示模型的<strong>复杂度对模型的惩罚</strong>，对系数的惩罚，<br>来约束系数的数目或者大小，所以在一定程度上可以减少过拟合情况），下面我们介绍一般情况下的<br>两种正则化框架。</p>
+<p><strong>问题转变</strong>: 经验风险最小化$\to$ 结构风险最小化</p>
+<p>$$<br>L1: \mathop{argmin}_\omega L(\omega)+\lambda||\omega||_1, \lambda&gt;0<br>$$</p>
+<p>$$<br>L2: \mathop{argmin}_\omega L(\omega)+\alpha||\omega||_2^{2}, \lambda&gt;0<br>$$</p>
+<p>下面对最小二乘误差分别分析这两者的区别。</p>
+<ul>
+<li>L1正则可以引起<strong>稀疏性</strong>$\Longleftrightarrow$L1可以使很多$\omega=0$<ul>
+<li>可以用来做<strong>特征选择</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="L1-Lasso"><a href="#L1-Lasso" class="headerlink" title="L1 Lasso"></a>L1 Lasso</h3><p>L1正则化可以引起<strong>稀疏解</strong>。</p>
+<p>从最小化损失的角度看，由于 L1 项求导在0附近的左右导数都不是0，因此更容易取到0解。</p>
+<p>从另一个方面看，L1 正则化相当于：<br>$$<br>\mathop{argmin}_\omega L(\omega) \<br>s.t.||\omega||_1&lt;C<br>$$</p>
+<p>我们已经看到平方误差损失函数在 $\omega$ 空间是一个菱形，因此上式求解就是菱形和<br>$||\omega||_1=C$ 的切点，因此更容易相切在坐标轴上。</p>
+<p><img src="/img/20160904184428459.png" alt=""></p>
+<h3 id="L2-Ridge"><a href="#L2-Ridge" class="headerlink" title="L2 Ridge"></a>L2 Ridge</h3><p>$$<br>\begin{aligned}<br>\hat{\omega} = \mathop{argmin}_\omega L(\omega) + \lambda\omega^T\omega &amp; \to \frac{\partial}{\partial\omega}L(\omega) +2\omega = 0  \\<br>&amp; \to 2 X^{T}X\hat{\omega} -2X^TY + 2\lambda\hat{\omega}=0  \\<br>&amp; \to \hat{\omega} = (X^TX+\lambda\mathbb{I})^{-1}X^{T}Y<br>\end{aligned}<br>$$</p>
+<p><strong>岭回归的复杂度</strong><br>这种方法与 普通最小二乘法 的复杂度是相同的.</p>
+<p>可以看到，这个正则化参数和 MAP 结果不谋而合。利用2范数进行正则化不仅可以是模型选择<br>$\omega$较小的参数，同时也避免$X^TX$不可逆的问题。</p>
+<p><img src="/img/20160904184646963.png" alt=""></p>
+<p><strong>如果不太确定用$L_1$好，还是$L_2$好，可以用它们的组合，称作ElasticNet，损失函数如下:</strong><br>$$<br>L(w)=\sum_{i=1}^m(y_i-f(x_i))^2+\lambda||w||_1+\alpha||w||_2<br>$$<br>可以发现通过调整超参，可以控制$w$的大小，如果$\lambda$或$\alpha$设置很大，$w$会被约束的很小，<br>而如果$\alpha$或$\lambda$设置为0，等价于原始的不带正则项的线性回归；通常可以通过交叉验证(Cross-Validation)，<br>根据验证集上的表现来设置一个合适的超参.</p>
+
             </div>
             <hr/>
 
@@ -597,6 +636,12 @@
                     <div class="summary block-with-text">
                         
                             
+声明：本文内容参考了，网络中的一些资源，但时间久远，忘记了出处，所以有些没有指出参考文献。本文也仅作为记录自己学习笔记。若原创觉得有异议请告知。参考资料：
+
+正则化如何防止过拟合
+
+
+正则化在实际应用时，如果样本容量不远远大于样本的特征维
                         
                     </div>
                     <div class="publish-info">
@@ -807,6 +852,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
