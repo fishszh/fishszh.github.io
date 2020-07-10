@@ -514,6 +514,65 @@ x<span class="token punctuation">.</span>assign<span class="token punctuation">(
 <li>shard: 采样，从某个位置开始隔固定距离采样一个元素。</li>
 <li>take: 采样，从开始位置取前几个元素。</li>
 </ul>
+<blockquote>
+<p>注意，shuffle函数操作流程</p>
+<ul>
+<li>顺序导入到大小为buffer_size的数据池，并打乱顺序</li>
+<li>提走batch_size个数据</li>
+<li>顺序导入数据集中batch_size个数据，并打乱顺序</li>
+</ul>
+</blockquote>
+<h4 id="提升性能"><a href="#提升性能" class="headerlink" title="提升性能"></a>提升性能</h4><p><a href="https://lyhue1991.github.io/eat_tensorflow2_in_30_days/5-1,%E6%95%B0%E6%8D%AE%E7%AE%A1%E9%81%93Dataset.html" target="_blank" rel="noopener">参考这里</a></p>
+<p>训练深度学习模型常常会非常耗时。</p>
+<p>模型训练的耗时主要来自于两个部分，一部分来自<strong>数据准备</strong>，另一部分来自<strong>参数迭代</strong>。</p>
+<p>参数迭代过程的耗时通常依赖于GPU来提升。</p>
+<p>而数据准备过程的耗时则可以通过构建高效的数据管道进行提升。</p>
+<p>以下是一些构建高效数据管道的建议。</p>
+<ol>
+<li>使用 <code>prefetch</code> 方法让数据准备和参数迭代两个过程相互并行。</li>
+<li>使用 <code>interleave</code> 方法可以让数据读取过程多进程执行,并将不同来源数据夹在一起。</li>
+<li>使用 <code>map</code> 时设置<code>num_parallel_calls</code> 让数据转换过程多进行执行。</li>
+<li>使用 <code>cache</code> 方法让数据在第一个<code>epoch</code>后缓存到内存中，仅限于数据集不大情形。<strong>慎用：数据小时可以，数据很大，内存会爆</strong></li>
+<li>使用 <code>map</code>转换时，先<code>batch</code>, 然后采用向量化的转换方法对每个<code>batch</code>进行转换。</li>
+</ol>
+<p>示例1</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 构建管道</span>
+<span class="token keyword">def</span> <span class="token function">parse_line</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> tf<span class="token punctuation">.</span>strings<span class="token punctuation">.</span>split<span class="token punctuation">(</span>line<span class="token punctuation">,</span><span class="token string">"\t"</span><span class="token punctuation">)</span>
+    label <span class="token operator">=</span> tf<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>strings<span class="token punctuation">.</span>to_number<span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tf<span class="token punctuation">.</span>int32<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    features <span class="token operator">=</span> tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>strings<span class="token punctuation">.</span>to_number<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>strings<span class="token punctuation">.</span>split<span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tf<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>features<span class="token punctuation">,</span>label<span class="token punctuation">)</span>
+
+ds_train<span class="token operator">=</span>  tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>filenames <span class="token operator">=</span> <span class="token punctuation">[</span>train_token_path<span class="token punctuation">]</span><span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>map<span class="token punctuation">(</span>parse_line<span class="token punctuation">,</span>num_parallel_calls <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>buffer_size <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span>
+
+ds_test<span class="token operator">=</span>  tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>filenames <span class="token operator">=</span> <span class="token punctuation">[</span>test_token_path<span class="token punctuation">]</span><span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>map<span class="token punctuation">(</span>parse_line<span class="token punctuation">,</span>num_parallel_calls <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>buffer_size <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span>
+
+ds_train_raw <span class="token operator">=</span>  tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>filenames <span class="token operator">=</span> <span class="token punctuation">[</span>train_data_path<span class="token punctuation">]</span><span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>map<span class="token punctuation">(</span>split_line<span class="token punctuation">,</span>num_parallel_calls <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>buffer_size <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span>
+
+ds_test_raw <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>filenames <span class="token operator">=</span> <span class="token punctuation">[</span>test_data_path<span class="token punctuation">]</span><span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>map<span class="token punctuation">(</span>split_line<span class="token punctuation">,</span>num_parallel_calls <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+   <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例2</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#使用并行化预处理num_parallel_calls 和预存数据prefetch来提升性能</span>
+ds_train <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>list_files<span class="token punctuation">(</span><span class="token string">"./data/cifar2/train/*/*.jpg"</span><span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>map<span class="token punctuation">(</span>load_image<span class="token punctuation">,</span> num_parallel_calls<span class="token operator">=</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>buffer_size <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span>
+
+ds_test <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>list_files<span class="token punctuation">(</span><span class="token string">"./data/cifar2/test/*/*.jpg"</span><span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>map<span class="token punctuation">(</span>load_image<span class="token punctuation">,</span> num_parallel_calls<span class="token operator">=</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>batch<span class="token punctuation">(</span>BATCH_SIZE<span class="token punctuation">)</span> \
+           <span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>AUTOTUNE<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-Gradient-操作"><a href="#3-Gradient-操作" class="headerlink" title="3. Gradient 操作"></a>3. Gradient 操作</h2><ul>
 <li>非高阶函数全连接操作都必须在Gradient的tape中完成？</li>
 </ul>
@@ -524,6 +583,9 @@ x <span class="token operator">=</span> tf<span class="token punctuation">.</spa
     loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span>y<span class="token number">-3</span><span class="token punctuation">)</span>
 grads <span class="token operator">=</span> tape<span class="token punctuation">.</span>gradient<span class="token punctuation">(</span>loss<span class="token punctuation">,</span> <span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 不然这一步，不能识别x为loss的变量</span>
 x<span class="token punctuation">.</span>assign<span class="token punctuation">(</span>x<span class="token operator">-</span>lr<span class="token operator">*</span>grads<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>由于梯度运算会消耗大量的计算资源，而且会自动更新相关参数，对于不需要的优化的张量，如神经网络的输入𝑿， 不需要通过 <code>tf.Variable</code> 封装;相反，对于需要计算梯度并优化的张量，如神经网络层的𝑾 和𝒃，需要通过 <code>tf.Variable</code> 包裹以便 <code>TensorFlow</code> 跟踪相关梯度信息。</p>
+</blockquote>
 <h2 id="4-模型建立"><a href="#4-模型建立" class="headerlink" title="4. 模型建立"></a>4. 模型建立</h2><h3 id="4-1-样例"><a href="#4-1-样例" class="headerlink" title="4.1. 样例"></a>4.1. 样例</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Model</span><span class="token punctuation">(</span>tf<span class="token punctuation">.</span>keras<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         super<span class="token punctuation">(</span>Model<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -783,20 +845,23 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/">
+                <a href="/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a12.jpg" class="responsive-img" alt="关于ML的一些Triger">
+                        <img src="/medias/featureimages/a19.jpg" class="responsive-img" alt="数据预处理 2">
                         
-                        <span class="card-title">关于ML的一些Triger</span>
+                        <span class="card-title">数据预处理 2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Triger 1 数据分析暂时还不知道什么是Spectral Graph Theory，但对Spectral这个词异常熟悉，打了几年交到了。
-其实拿到数据后，分析数据间的结构和依赖关系很重要，可以尝试构建一个图谱关系，然后，再根据一些特殊链
+                            这里针对具体的应用场景，来总结一些需要注意的地方。
+
+仅仅是随笔，并不严谨！
+
+文本预处理中设置 MAX_WORDS仅考虑最高频的一些文本信息，但这里也有很多要注意的地方。对于单个文本和整个数据集都可以做类似的考虑。这样可以大大节省计算成本
                         
                     </div>
                     <div class="publish-info">
@@ -818,8 +883,12 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Triger/">
-                        <span class="chip bg-color">Triger</span>
+                    <a href="/tags/TensorFlow/">
+                        <span class="chip bg-color">TensorFlow</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                        <span class="chip bg-color">数据处理</span>
                     </a>
                     
                 </div>
@@ -833,33 +902,32 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/06/tensorflow/shu-ju-yu-chu-li/">
+                <a href="/2020/06/02/python/python-zhong-de-lei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a0.jpg" class="responsive-img" alt="数据预处理">
+                        <img src="/medias/featureimages/a5.jpg" class="responsive-img" alt="Python中的类">
                         
-                        <span class="card-title">数据预处理</span>
+                        <span class="card-title">Python中的类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据的质量至关重要，可能直接决定了模型的预测和泛化能力。它涉及很多因素，包括：准确性、完整性、一致性、时效性、可信性和解释性。
-而现实中我们拿到的数据可能包含了大量的缺失值，可能包含大量的噪音，也可能因为人工录入错误导致有异常存在。
-因此，
+                            1. 新式类和旧式类这篇文章很好的介绍了新式类的特性: http://www.cnblogs.com/btchenguang/archive/2012/09/17/2689146.html
+新式类很早在2.2就出现了,所以旧式类完全是兼容的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -869,12 +937,8 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TensorFlow/">
-                        <span class="chip bg-color">TensorFlow</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/%E7%B1%BB/">
+                        <span class="chip bg-color">类</span>
                     </a>
                     
                 </div>
@@ -1012,13 +1076,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

@@ -475,7 +475,8 @@
             <div id="articleContent">
                 <h2 id="图片中字体问题"><a href="#图片中字体问题" class="headerlink" title="图片中字体问题"></a>图片中字体问题</h2><pre class="line-numbers language-python"><code class="language-python">plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> usetex<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">'font'</span><span class="token punctuation">,</span> family<span class="token operator">=</span><span class="token string">'serif'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.size'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">15</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.size'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">15</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'figure.constrained_layout.use'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="多线条颜色设置"><a href="#多线条颜色设置" class="headerlink" title="多线条颜色设置"></a>多线条颜色设置</h2><pre class="line-numbers language-python"><code class="language-python">colors <span class="token operator">=</span> plt<span class="token punctuation">.</span>get_cmap<span class="token punctuation">(</span><span class="token string">'brg'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="eps-不透明度"><a href="#eps-不透明度" class="headerlink" title="eps 不透明度"></a>eps 不透明度</h2><p>先保存pdf再转eps</p>
 <pre class="line-numbers language-bash"><code class="language-bash">pdftops -eps name.pdf name.eps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -589,24 +590,22 @@ plt<span class="token punctuation">.</span>rcParams<span class="token punctuatio
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/21/python/python-duo-xian-cheng/">
+                <a href="/2019/08/21/python/python-dai-ma-gui-fan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python 并行处理">
+                        <img src="/medias/featureimages/a17.jpg" class="responsive-img" alt="Python 代码规范">
                         
-                        <span class="card-title">Python 并行处理</span>
+                        <span class="card-title">Python 代码规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考资料:
+                            良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。
+参考文献:  
+\1. PEP 8 – Style Guide for Python Code https://www.python.org/dev/peps/pep-0008  
 
-multiprocessing— Process-based “threading” interface  
-https://python.freelycode.com/contribution/detail/1364
-
-简介
                         
                     </div>
                     <div class="publish-info">
@@ -628,12 +627,8 @@ https://python.freelycode.com/contribution/detail/1364
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B9%B6%E8%A1%8C/">
-                        <span class="chip bg-color">并行</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                        <span class="chip bg-color">代码规范</span>
                     </a>
                     
                 </div>
@@ -647,64 +642,54 @@ https://python.freelycode.com/contribution/detail/1364
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/03/python/python-zheng-zai-biao-da/">
+                <a href="/2019/08/07/bubble/martial-arts-secret/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python正则表达">
+                        <img src="/medias/featureimages/a16.jpg" class="responsive-img" alt="武功秘籍">
                         
-                        <span class="card-title">Python正则表达</span>
+                        <span class="card-title">武功秘籍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            非打印字符
+                            
+资料来源于网络，天下武功唯快不破，遂精而往。少林，少林，不秃也能变强。
+
+第一式 ML正则化L1与L2区别
+
+L1是模型各个参数的绝对值之和。
+L2是模型各个参数的平方和的开方值。
 
 
-字符
-描述
 
-
-
-\cx
-Control+x,x属于[A-Z a-z]
-
-
-\f
-换页符
-
-
-\n
-换行符
-
-
-\s
-任何空白字符，包括空格、制表符、换页符等，等价于[\f\n\r\t\v]
-
-
-\S
-任何非空白字符
-
-
-\
+L1会趋向于产生少量的特征，而其他的特征都是0.因
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-08-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Bubble/">
+                        <span class="chip bg-color">Bubble</span>
+                    </a>
+                    
                 </div>
                 
             </div>

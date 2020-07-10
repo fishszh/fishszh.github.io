@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python 代码规范, FishSzh">
+    <meta name="keywords" content="武功秘籍, FishSzh">
     <meta name="description" content="劳作中">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python 代码规范 | FishSzh</title>
+    <title>武功秘籍 | FishSzh</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/a17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/a16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python 代码规范</h1>
+                    <h1 class="description center-align post-title">武功秘籍</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">代码规范</span>
+                            <a href="/tags/Bubble/">
+                                <span class="chip bg-color">Bubble</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-21
+                    2019-08-07
                 </div>
                 
 
@@ -473,25 +473,50 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。</p>
-<p>参考文献:  </p>
-<p>\1. PEP 8 – Style Guide for Python Code <a href="https://www.python.org/dev/peps/pep-0008" target="_blank" rel="noopener">https://www.python.org/dev/peps/pep-0008</a>  </p>
-<p>\2. Google开源项目风格指南: <a href="https://zh-google-styleguide.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://zh-google-styleguide.readthedocs.io/en/latest/</a>  </p>
-<p>\3. Python开发规范 <a href="https://www.jianshu.com/p/d414e90dc953" target="_blank" rel="noopener">https://www.jianshu.com/p/d414e90dc953</a>  </p>
-<h2 id="函数注释样例"><a href="#函数注释样例" class="headerlink" title="函数注释样例"></a>函数注释样例</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">'''
-    Some description of the function.
-
-    Parameters
-    ----------
-    param1: float, default=1.0
-        Description of the parameter
-
-    param2: {'linear', 'we'}, default='linear'
-        Description.
-
-    '''</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <blockquote>
+<p>资料来源于网络，天下武功唯快不破，遂精而往。少林，少林，不秃也能变强。</p>
+</blockquote>
+<h2 id="第一式-ML"><a href="#第一式-ML" class="headerlink" title="第一式 ML"></a>第一式 ML</h2><h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><h4 id="L1与L2区别"><a href="#L1与L2区别" class="headerlink" title="L1与L2区别"></a>L1与L2区别</h4><ol>
+<li><ul>
+<li>L1是模型各个参数的绝对值之和。</li>
+<li>L2是模型各个参数的平方和的开方值。</li>
+</ul>
+</li>
+<li><ul>
+<li>L1会趋向于产生少量的特征，而其他的特征都是0.<br>因为最优的参数值很大概率出现在坐标轴上，这样就会导致某一维的权重为0 ，产生稀疏权重矩阵</li>
+<li>L2会选择更多的特征，这些特征都会接近于0。<br>最优的参数值很小概率出现在坐标轴上，因此每一维的参数都不会是0。当最小化||w||时，就会使每一项趋近于0</li>
+</ul>
+</li>
+<li><p>下降速度：最小化权值参数L1比L2变化的快</p>
+</li>
+<li><p>模型空间的限制：L1会产生稀疏 L2不会。</p>
+</li>
+</ol>
+<h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><h4 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h4><ul>
+<li>超平面寻找最大类间隔，就是寻找最优超平面</li>
+</ul>
+<h4 id="svm怎么解决不容易找到超平面的问题-TODO"><a href="#svm怎么解决不容易找到超平面的问题-TODO" class="headerlink" title="svm怎么解决不容易找到超平面的问题? TODO"></a>svm怎么解决不容易找到超平面的问题? TODO</h4><p>做特征转换，核函数？</p>
+<h2 id="第二式"><a href="#第二式" class="headerlink" title="第二式"></a>第二式</h2><h3 id="Pooling池化操作的反向梯度传播"><a href="#Pooling池化操作的反向梯度传播" class="headerlink" title="Pooling池化操作的反向梯度传播"></a>Pooling池化操作的反向梯度传播</h3><blockquote>
+<p>参考自 <a href="https://blog.csdn.net/qq_21190081/article/details/72871704" target="_blank" rel="noopener">https://blog.csdn.net/qq_21190081/article/details/72871704</a></p>
+</blockquote>
+<p>核心问题是需要<strong>保证传递的loss（或者梯度）总和不变</strong>，哪来哪去</p>
+<ul>
+<li><strong>mean pooling</strong> 均权来，均权去</li>
+<li><strong>max pooling</strong> 哪来哪去</li>
+</ul>
+<h2 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h2><h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><h4 id="one-hot"><a href="#one-hot" class="headerlink" title="one-hot"></a>one-hot</h4><ul>
+<li>特点：<ul>
+<li>每个向量互相垂直</li>
+<li>高度稀疏</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>维度灾难：高维情形下将导致数据样本稀疏，距离计算困难，这对下游模型的负担是很重的。</li>
+<li>有序性问题：它无法反映文本的有序性。因为语言并不是一个完全无序的随机序列。比如说，一个字之后只有接特定的字还能组成一个有意义的词，特定的一系列词按特定的顺序组合在一起才能组成一个有意义的句子。</li>
+<li>语义鸿沟：其无法通过词向量来衡量相关词之间的距离关系，即这样的表征方法无法反映词之间的相似程度，因为任意两个向量的距离是相同的。</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -517,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/">http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/</a>
+                    <a href="http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/">http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,8 +580,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">代码规范</span>
+                                <a href="/tags/Bubble/">
+                                    <span class="chip bg-color">Bubble</span>
                                 </a>
                             
                         </div>
@@ -602,64 +627,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/21/python/python-duo-xian-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python 并行处理">
-                        
-                        <span class="card-title">Python 并行处理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            参考资料:
-
-multiprocessing— Process-based “threading” interface  
-https://python.freelycode.com/contribution/detail/1364
-
-简介
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%B9%B6%E8%A1%8C/">
-                        <span class="chip bg-color">并行</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2019/08/07/python/matplotlib/">
                     <div class="card-image">
                         
@@ -679,9 +646,9 @@ plt.rcParams['figure.co
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-08-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -701,6 +668,75 @@ plt.rcParams['figure.co
                         <span class="chip bg-color">matplotlib</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/06/03/python/python-zheng-zai-biao-da/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/a6.jpg" class="responsive-img" alt="Python正则表达">
+                        
+                        <span class="card-title">Python正则表达</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            非打印字符
+
+
+字符
+描述
+
+
+
+\cx
+Control+x,x属于[A-Z a-z]
+
+
+\f
+换页符
+
+
+\n
+换行符
+
+
+\s
+任何空白字符，包括空格、制表符、换页符等，等价于[\f\n\r\t\v]
+
+
+\S
+任何非空白字符
+
+
+\
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
