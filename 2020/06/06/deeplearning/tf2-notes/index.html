@@ -735,6 +735,12 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
 <li>Notebook 中<br><code>%tensorboard --logdir logs/fit</code></li>
 <li>终端<br><code>tensorboard --logdir=logs/fit</code></li>
 </ul>
+<h3 id="colab"><a href="#colab" class="headerlink" title="colab"></a>colab</h3><h4 id="unzip-file"><a href="#unzip-file" class="headerlink" title="unzip file"></a>unzip file</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">!</span>mv xxx.zip /content/
+%cd /content
+<span class="token operator">!</span>unzip xx.zip
+<span class="token operator">!</span>mv xxx /content/gdrive/path <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样操作解压很快，但是同样需要将数据传输到相应的目录，也要花一点时间，或者直接读取解压后的文件目录，只是每次jupyter重启后重新<code>mv  unzip  xxx.zip</code>这样只用花费<code>mv</code>的时间，这也会极大的提高数据流的处理速度，毕竟直接在硬盘上读取数据，比在网盘上要快很多。</p>
+<h3 id="GPU与CPU"><a href="#GPU与CPU" class="headerlink" title="GPU与CPU"></a>GPU与CPU</h3><p>要特别注意GPU与CPU的分配问题，对运算速度影响非常明显<br>可以参考<a href="https://blog.csdn.net/qq_32998593/article/details/92849585" target="_blank" rel="noopener">https://blog.csdn.net/qq_32998593/article/details/92849585</a></p>
 
             </div>
             <hr/>
@@ -760,7 +766,7 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/">http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/</a>
+                    <a href="http://fishszh.github.io/2020/06/06/deeplearning/tf2-notes/">http://fishszh.github.io/2020/06/06/deeplearning/tf2-notes/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -845,23 +851,21 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/">
+                <a href="/2020/06/06/deeplearning/shu-ju-yu-chu-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a19.jpg" class="responsive-img" alt="数据预处理 2">
+                        <img src="/medias/featureimages/a0.jpg" class="responsive-img" alt="数据预处理">
                         
-                        <span class="card-title">数据预处理 2</span>
+                        <span class="card-title">数据预处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这里针对具体的应用场景，来总结一些需要注意的地方。
-
-仅仅是随笔，并不严谨！
-
-文本预处理中设置 MAX_WORDS仅考虑最高频的一些文本信息，但这里也有很多要注意的地方。对于单个文本和整个数据集都可以做类似的考虑。这样可以大大节省计算成本
+                            数据的质量至关重要，可能直接决定了模型的预测和泛化能力。它涉及很多因素，包括：准确性、完整性、一致性、时效性、可信性和解释性。
+而现实中我们拿到的数据可能包含了大量的缺失值，可能包含大量的噪音，也可能因为人工录入错误导致有异常存在。
+因此，
                         
                     </div>
                     <div class="publish-info">
@@ -902,32 +906,35 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/02/python/python-zhong-de-lei/">
+                <a href="/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a5.jpg" class="responsive-img" alt="Python中的类">
+                        <img src="/medias/featureimages/a19.jpg" class="responsive-img" alt="数据预处理 2">
                         
-                        <span class="card-title">Python中的类</span>
+                        <span class="card-title">数据预处理 2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 新式类和旧式类这篇文章很好的介绍了新式类的特性: http://www.cnblogs.com/btchenguang/archive/2012/09/17/2689146.html
-新式类很早在2.2就出现了,所以旧式类完全是兼容的
+                            这里针对具体的应用场景，来总结一些需要注意的地方。
+
+仅仅是随笔，并不严谨！
+
+文本预处理中设置 MAX_WORDS仅考虑最高频的一些文本信息，但这里也有很多要注意的地方。对于单个文本和整个数据集都可以做类似的考虑。这样可以大大节省计算成本
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -937,8 +944,12 @@ EPOCHS <span class="token operator">=</span> <span class="token number">5</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%B1%BB/">
-                        <span class="chip bg-color">类</span>
+                    <a href="/tags/TensorFlow/">
+                        <span class="chip bg-color">TensorFlow</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                        <span class="chip bg-color">数据处理</span>
                     </a>
                     
                 </div>

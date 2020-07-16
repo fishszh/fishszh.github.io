@@ -494,7 +494,7 @@
 <p>正则化一般是在损失函数上加入正则化项（表示模型的<strong>复杂度对模型的惩罚</strong>，对系数的惩罚，<br>来约束系数的数目或者大小，所以在一定程度上可以减少过拟合情况），下面我们介绍一般情况下的<br>两种正则化框架。</p>
 <p><strong>问题转变</strong>: 经验风险最小化$\to$ 结构风险最小化</p>
 <p>$$<br>L1: \mathop{argmin}_\omega L(\omega)+\lambda||\omega||_1, \lambda&gt;0<br>$$</p>
-<p>$$<br>L2: \mathop{argmin}_\omega L(\omega)+\alpha||\omega||_2^{2}, \lambda&gt;0<br>$$</p>
+<p>$$<br>L2: \mathop{argmin}_\omega L(\omega)+\alpha||\omega||_2^{2}, \alpha&gt;0<br>$$</p>
 <p>下面对最小二乘误差分别分析这两者的区别。</p>
 <ul>
 <li>L1正则可以引起<strong>稀疏性</strong>$\Longleftrightarrow$L1可以使很多$\omega=0$<ul>
@@ -504,10 +504,15 @@
 </ul>
 <h3 id="L1-Lasso"><a href="#L1-Lasso" class="headerlink" title="L1 Lasso"></a>L1 Lasso</h3><p>L1正则化可以引起<strong>稀疏解</strong>。</p>
 <p>从最小化损失的角度看，由于 L1 项求导在0附近的左右导数都不是0，因此更容易取到0解。</p>
-<p>从另一个方面看，L1 正则化相当于：<br>$$<br>\mathop{argmin}_\omega L(\omega) \<br>s.t.||\omega||_1&lt;C<br>$$</p>
+<p>从另一个方面看，L1 正则化相当于：</p>
+<p>$$<br>\begin{aligned}<br>&amp; \mathop{argmin}_\omega L(\omega)  \<br>&amp; s.t.||\omega||_1&lt;C<br>\end{aligned}<br>$$</p>
 <p>我们已经看到平方误差损失函数在 $\omega$ 空间是一个菱形，因此上式求解就是菱形和<br>$||\omega||_1=C$ 的切点，因此更容易相切在坐标轴上。</p>
 <p><img src="/img/20160904184428459.png" alt=""></p>
-<h3 id="L2-Ridge"><a href="#L2-Ridge" class="headerlink" title="L2 Ridge"></a>L2 Ridge</h3><p>$$<br>\begin{aligned}<br>\hat{\omega} = \mathop{argmin}_\omega L(\omega) + \lambda\omega^T\omega &amp; \to \frac{\partial}{\partial\omega}L(\omega) +2\omega = 0  \\<br>&amp; \to 2 X^{T}X\hat{\omega} -2X^TY + 2\lambda\hat{\omega}=0  \\<br>&amp; \to \hat{\omega} = (X^TX+\lambda\mathbb{I})^{-1}X^{T}Y<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>\frac{\partial{L}}{\partial{\omega}} &amp; = \lambda sign(\omega)  \<br>\omega &amp; \leftarrow \omega - \eta\frac{\partial{L}}{\omega} = \omega -\eta \lambda sign(\omega)<br>\end{aligned}<br>$$</p>
+<p>每次更新$\omega$，都会减小$\eta\lambda$,经过$N$次迭代后,会有部分$\omega^{i}=0$。</p>
+<h3 id="L2-Ridge"><a href="#L2-Ridge" class="headerlink" title="L2 Ridge"></a>L2 Ridge</h3><p>$$<br>\begin{aligned}<br>\hat{\omega} = \mathop{argmin}_\omega L(\omega) + \lambda\omega^T\omega &amp; \to \frac{\partial}{\partial\omega}L(\omega) +2\lambda\omega = 0  \\<br>&amp; \to 2 X^{T}X\hat{\omega} -2X^TY + 2\lambda\hat{\omega}=0  \\<br>&amp; \to \hat{\omega} = (X^TX+\lambda\mathbb{I})^{-1}X^{T}Y<br>\end{aligned}<br>$$</p>
+<p>$$<br>\omega \leftarrow \omega - \eta\left(\frac{\partial{L}}{\partial{\omega}}+2\lambda\omega\right) = \omega(1-2\eta\lambda) -\eta \frac{\partial{L}}{\partial{\omega}}<br>$$</p>
+<p>每次更新$\omega$，所有都会缩小$1-\eta\lambda$倍,经过$N$次迭代后,所有$\omega^{i}$都会比较小</p>
 <p><strong>岭回归的复杂度</strong><br>这种方法与 普通最小二乘法 的复杂度是相同的.</p>
 <p>可以看到，这个正则化参数和 MAP 结果不谋而合。利用2范数进行正则化不仅可以是模型选择<br>$\omega$较小的参数，同时也避免$X^TX$不可逆的问题。</p>
 <p><img src="/img/20160904184646963.png" alt=""></p>
@@ -618,36 +623,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/15/machine-learing/sun-shi-han-shu/">
+                <a href="/2020/07/14/deeplearning/wang-luo-jie-gou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a18.jpg" class="responsive-img" alt="损失函数">
+                        <img src="/medias/featureimages/a13.jpg" class="responsive-img" alt="网络结构">
                         
-                        <span class="card-title">损失函数</span>
+                        <span class="card-title">网络结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-声明：本文内容参考了，网络中的一些资源，但时间久远，忘记了出处，所以有些没有指出参考文献。本文也仅作为记录自己学习笔记。若原创觉得有异议请告知。参考资料：
+                            1. 终极目标类人脑的网络结构和信息处理方式，但更加强大的信息处理能力。
+现状：
 
-正则化如何防止过拟合
+基本的网络块结构已经建立起来
+子网络单元间大致都以线性连接为主（信息传输方式为线性）
+无专门的信息处理单元，应当设置专门的网络结构单元，来处理信息
 
-
-正则化在实际应用时，如果样本容量不远远大于样本的特征维
+1.1
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -660,12 +665,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">损失函数</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">网络结构</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fishszh.github.io/"/>
-  <updated>2020-06-18T13:42:19.756Z</updated>
+  <updated>2020-07-15T14:09:57.050Z</updated>
   <id>http://fishszh.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网络结构</title>
+    <link href="http://fishszh.github.io/2020/07/14/deeplearning/wang-luo-jie-gou/"/>
+    <id>http://fishszh.github.io/2020/07/14/deeplearning/wang-luo-jie-gou/</id>
+    <published>2020-07-13T16:00:00.000Z</published>
+    <updated>2020-07-15T14:09:57.050Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-终极目标&quot;&gt;&lt;a href=&quot;#1-终极目标&quot; class=&quot;headerlink&quot; title=&quot;1. 终极目标&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="网络结构" scheme="http://fishszh.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>损失函数</title>
     <link href="http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/"/>
     <id>http://fishszh.github.io/2020/06/15/machine-learing/sun-shi-han-shu/</id>
     <published>2020-06-14T16:00:00.000Z</published>
-    <updated>2020-06-18T13:42:19.756Z</updated>
+    <updated>2020-07-12T13:15:27.033Z</updated>
     
     <summary type="html">
     
@@ -74,9 +101,36 @@
   </entry>
   
   <entry>
+    <title>关于ML的一些Triger</title>
+    <link href="http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/"/>
+    <id>http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-21T13:47:59.828Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Triger-1-数据分析&quot;&gt;&lt;a href=&quot;#Triger-1-数据分析&quot; class=&quot;headerlink&quot; title=&quot;Triger 1 数据分析&quot;&gt;&lt;/a&gt;Triger 1 数据分析&lt;/h2&gt;&lt;p&gt;暂时还不知道什么是Spectral Graph
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Triger" scheme="http://fishszh.github.io/tags/Triger/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据预处理</title>
-    <link href="http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/"/>
-    <id>http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li/</id>
+    <link href="http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li/"/>
+    <id>http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li/</id>
     <published>2020-06-05T16:00:00.000Z</published>
     <updated>2020-06-21T13:48:02.585Z</updated>
     
@@ -105,11 +159,11 @@
   </entry>
   
   <entry>
-    <title>关于ML的一些Triger</title>
-    <link href="http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/"/>
-    <id>http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/</id>
+    <title>TensorFlow 2.0 Notes</title>
+    <link href="http://fishszh.github.io/2020/06/06/deeplearning/tf2-notes/"/>
+    <id>http://fishszh.github.io/2020/06/06/deeplearning/tf2-notes/</id>
     <published>2020-06-05T16:00:00.000Z</published>
-    <updated>2020-06-21T13:47:59.828Z</updated>
+    <updated>2020-07-10T10:50:49.481Z</updated>
     
     <summary type="html">
     
@@ -117,7 +171,8 @@
       
         
         
-          &lt;h2 id=&quot;Triger-1-数据分析&quot;&gt;&lt;a href=&quot;#Triger-1-数据分析&quot; class=&quot;headerlink&quot; title=&quot;Triger 1 数据分析&quot;&gt;&lt;/a&gt;Triger 1 数据分析&lt;/h2&gt;&lt;p&gt;暂时还不知道什么是Spectral Graph
+          &lt;p&gt;这篇文章，主要在于记录，自己对TensorFlow这个框架的不断理解的过程。记载了一些认为有必要，写下来提醒自己的问题或者方法，也方便日后自己查阅。&lt;/p&gt;
+&lt;h2 id=&quot;1-Tensorflow-中的运算符操作&quot;&gt;&lt;a
         
       
     
@@ -127,14 +182,14 @@
       <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Triger" scheme="http://fishszh.github.io/tags/Triger/"/>
+      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
     
   </entry>
   
   <entry>
     <title>数据预处理 2</title>
-    <link href="http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/"/>
-    <id>http://fishszh.github.io/2020/06/06/tensorflow/shu-ju-yu-chu-li-2/</id>
+    <link href="http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/"/>
+    <id>http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/</id>
     <published>2020-06-05T16:00:00.000Z</published>
     <updated>2020-06-13T03:41:03.456Z</updated>
     
@@ -165,34 +220,6 @@
   </entry>
   
   <entry>
-    <title>TensorFlow 2.0 Notes</title>
-    <link href="http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/"/>
-    <id>http://fishszh.github.io/2020/06/06/tensorflow/tf2-notes/</id>
-    <published>2020-06-05T16:00:00.000Z</published>
-    <updated>2020-07-10T05:44:54.229Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这篇文章，主要在于记录，自己对TensorFlow这个框架的不断理解的过程。记载了一些认为有必要，写下来提醒自己的问题或者方法，也方便日后自己查阅。&lt;/p&gt;
-&lt;h2 id=&quot;1-Tensorflow-中的运算符操作&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Python中的类</title>
     <link href="http://fishszh.github.io/2020/06/02/python/python-zhong-de-lei/"/>
     <id>http://fishszh.github.io/2020/06/02/python/python-zhong-de-lei/</id>
@@ -216,6 +243,35 @@
     
     
       <category term="类" scheme="http://fishszh.github.io/tags/%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 代码规范</title>
+    <link href="http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/"/>
+    <id>http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/</id>
+    <published>2019-08-20T16:00:00.000Z</published>
+    <updated>2020-06-17T03:46:43.097Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。&lt;/p&gt;
+&lt;p&gt;参考文献:  &lt;/p&gt;
+&lt;p&gt;\1. PEP 8 – Style Guide for Python Code &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+    
+    
+      <category term="代码规范" scheme="http://fishszh.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   
@@ -251,11 +307,11 @@
   </entry>
   
   <entry>
-    <title>Python 代码规范</title>
-    <link href="http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/"/>
-    <id>http://fishszh.github.io/2019/08/21/python/python-dai-ma-gui-fan/</id>
-    <published>2019-08-20T16:00:00.000Z</published>
-    <updated>2020-06-17T03:46:43.097Z</updated>
+    <title>武功秘籍</title>
+    <link href="http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/"/>
+    <id>http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/</id>
+    <published>2019-08-06T16:00:00.000Z</published>
+    <updated>2020-07-07T01:46:19.978Z</updated>
     
     <summary type="html">
     
@@ -263,19 +319,20 @@
       
         
         
-          &lt;p&gt;良好的书写规范有利于我们写出漂亮的代码，也方便以后查看。&lt;/p&gt;
-&lt;p&gt;参考文献:  &lt;/p&gt;
-&lt;p&gt;\1. PEP 8 – Style Guide for Python Code &lt;a
+          &lt;blockquote&gt;
+&lt;p&gt;资料来源于网络，天下武功唯快不破，遂精而往。少林，少林，不秃也能变强。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;第一式-ML&quot;&gt;&lt;a href=&quot;#第一式-ML&quot; class=&quot;headerlink&quot; title=&quot;第一式
         
       
     
     </summary>
     
     
-      <category term="Python" scheme="http://fishszh.github.io/categories/Python/"/>
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="代码规范" scheme="http://fishszh.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+      <category term="Bubble" scheme="http://fishszh.github.io/tags/Bubble/"/>
     
   </entry>
   
@@ -303,36 +360,6 @@
     
     
       <category term="matplotlib" scheme="http://fishszh.github.io/tags/matplotlib/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>武功秘籍</title>
-    <link href="http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/"/>
-    <id>http://fishszh.github.io/2019/08/07/bubble/martial-arts-secret/</id>
-    <published>2019-08-06T16:00:00.000Z</published>
-    <updated>2020-07-07T01:46:19.978Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;资料来源于网络，天下武功唯快不破，遂精而往。少林，少林，不秃也能变强。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;第一式-ML&quot;&gt;&lt;a href=&quot;#第一式-ML&quot; class=&quot;headerlink&quot; title=&quot;第一式
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Bubble" scheme="http://fishszh.github.io/tags/Bubble/"/>
     
   </entry>
   
