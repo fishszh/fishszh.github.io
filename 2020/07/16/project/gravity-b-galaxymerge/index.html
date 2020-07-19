@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="网络结构, FishSzh">
+    <meta name="keywords" content="星系并合, FishSzh">
     <meta name="description" content="劳作中">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>网络结构 | FishSzh</title>
+    <title>星系并合 | FishSzh</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/a13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/a11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">网络结构</h1>
+                    <h1 class="description center-align post-title">星系并合</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">网络结构</span>
+                            <a href="/tags/Deep-Learning/">
+                                <span class="chip bg-color">Deep Learning</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
+                            <a href="/categories/Project/" class="post-category">
+                                Project
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2020-07-16
                 </div>
                 
 
@@ -473,94 +473,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-终极目标"><a href="#1-终极目标" class="headerlink" title="1. 终极目标"></a>1. 终极目标</h2><p>类人脑的网络结构和信息处理方式，但更加强大的信息处理能力。</p>
-<p>现状：</p>
-<ul>
-<li>基本的网络块结构已经建立起来</li>
-<li>子网络单元间大致都以线性连接为主（信息传输方式为线性）</li>
-<li>无专门的信息处理单元，应当设置专门的网络结构单元，来处理信息</li>
+                <h2 id="设想"><a href="#设想" class="headerlink" title="设想"></a>设想</h2><h3 id="基本设想"><a href="#基本设想" class="headerlink" title="基本设想"></a>基本设想</h3><p>星系并合过程再生成</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><h4 id="生成星系图像"><a href="#生成星系图像" class="headerlink" title="生成星系图像"></a>生成星系图像</h4><p>知识有限，尝试用GoogLeNet—VAE来生成fake并合星系。</p>
+<h4 id="终极目标"><a href="#终极目标" class="headerlink" title="终极目标"></a>终极目标</h4><p>逆向分析出并合星系的参数，用来模型重组。</p>
+<h3 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h3><ul>
+<li>采用LSTM训练</li>
+<li>数据比较少，初始条件的并合星系，要先通过一个模型来学习生成</li>
+<li>分析不同并合阶段的并合过程</li>
 </ul>
-<h3 id="1-1-要求"><a href="#1-1-要求" class="headerlink" title="1.1. 要求"></a>1.1. 要求</h3><ul>
-<li>更高的准确率</li>
-<li>更少的参数</li>
-<li>更少的资源消耗</li>
-<li>网络结构应该具备一定的设计原理</li>
-<li>稳定性</li>
-</ul>
-<h3 id="1-2-优化网络质量的生物学原理"><a href="#1-2-优化网络质量的生物学原理" class="headerlink" title="1.2. 优化网络质量的生物学原理"></a>1.2. 优化网络质量的生物学原理</h3><p>基于<strong>赫布原理</strong>和<strong>多尺度处理</strong>。</p>
-<p><strong>赫布原理</strong>：突触前神经元向突触后神经元的<strong>持续重复</strong>的刺激可以导致突触传递效能的增加。赫布理论有下列的特性：</p>
-<ul>
-<li>知觉获知是在神经系统中的表征是一群而不是一个细胞，因此这是一个较为<strong>分散的表征系统</strong>。表征不同的心智活动，并不完全系于细胞的独特身分，因为一个细胞可同时参与几个细胞集团。</li>
-<li>在细胞集合中，无论是组成分子或是联络通路，均有相当程度的<strong>余裕性</strong>，所以容许神经系统有部分的破坏，依然能执行所负担的功能。同时这些平行通路可容许由不同的部位到达兴奋全体的目的。</li>
-<li>细胞集合的成立虽然依赖连结，但连结的成果并非使刺激直通于反应，而是在中枢建立一个有缓冲作用（使刺激的影响能盘桓较久）的回路。</li>
-<li>人的大脑神经元运作的方式的确和原子内粒子的运作方式类似，人类的大脑的确是所有神经网络的总和。每个神经元本身并不重要，重要的是这些神经元怎么联合起来，联合起来可以做些什么事，这才是的细胞集合的核心。</li>
-</ul>
-<blockquote>
-<p><strong>总结</strong>一下：</p>
-<ul>
-<li><strong>每一个表征，都是集体作用的结果</strong>，这一步显然比较容易实现</li>
-<li><strong>个体可以服务于不同集体，即个体间可以组成不同的集体</strong>，即他们之间类似于一个<strong>图结构</strong>，不同的子网络单元之间组成图结构，来控制输出，但应该有有中枢系统，决定调用哪些子网络单元。</li>
-<li>同一子网络单元可以有多个，他们之间为图结构关系，图结构的关联传递，应该可以通过训练来得到，并由中枢系统来控制，也就是在传递过程中要不断地将信号传递会中枢系统，所以应该具有一个完整的信息通道一直处于激活或者待命状态。</li>
-<li>信息传输是否有效，需要有一定判据，在子网络单元内，可以可以通过激活函数，或者权重来衡量（但子网络单元中无效的细胞仍占用了资源），另外可以设置专门的子网络结构来甄别信息是否有效，如果这个过程不需要回到中枢系统判断，那么是否可以设置自中枢系统来甄别。</li>
-<li>信息通道是否设置上行和下行分离</li>
-</ul>
+<h2 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><blockquote>
+<p>数据来源：</p>
 </blockquote>
-<h3 id="1-3-下一步"><a href="#1-3-下一步" class="headerlink" title="1.3. 下一步"></a>1.3. 下一步</h3><p>目前（CNN中），同一层级内<strong>特征之间的关联</strong>还没有解决，可以通过增加一个或几个特殊通道（甚至是在子网络单元中，增加一个子单元）来表示这一关联特性。显然，这一关联特性也是通过学习得到的。GoogLeNet Inception 最终的concatenate实现了类似的功能，但concatenate后，只是实现了控制输出（其实所有层间都只是实现了控制输出，但类似GoogLeNet Inception这种结构并列细胞的实现更优一些）。应该有一个子单元，来控制开启和关闭一些参数通道，以节省资源。</p>
-<p>不同（细胞或者子网络单元）层级间的传递，不仅是在筛选特征，也在关联这些特征，这是全连接的的表现之一，但是这样无疑会有很多参数会被闲置，但仍占用资源，可以增加一个维度，或者子网络结构来筛选这些特征，更直接的办法就是Dropout或者增加一层网络单元进行筛选，但这并没有解决根本问题，资源占用依旧存在，应该实时的筛选子网络单元中参数或者子网络单元本身。理想的方式是有一个子单元，来控制开启和关闭一些参数通道，以节省资源。</p>
-<p>基于此，了解细胞的种类和每种细胞的特性至关重要，由此我们可以搭建出在不同功能需求下更加优秀子网络单元。自然我们就要了解现有的子网络单元都有哪些特性，从中得到灵感。</p>
-<h2 id="2-网络结构单元子结构-Cell"><a href="#2-网络结构单元子结构-Cell" class="headerlink" title="2. 网络结构单元子结构-Cell"></a>2. 网络结构单元子结构-Cell</h2><h3 id="2-1-Dropout"><a href="#2-1-Dropout" class="headerlink" title="2.1. Dropout"></a>2.1. Dropout</h3><p>全连接–到–稀疏连接–的转换</p>
-<p>减少了不同神经元间的复杂的相互适应，因此它可以使模型被迫获得更加健壮的特征，可以防止过拟合。</p>
-<p>注意区分训练和预测情形Dropout的设置不同。</p>
-<h3 id="2-2-1x1-kernel"><a href="#2-2-1x1-kernel" class="headerlink" title="2.2. 1x1 kernel"></a>2.2. 1x1 kernel</h3><p>将特征交叉重组到不同通道上（其实所有全连接层，都在做这件事，但Pool一类层，并不会增加模型参数），可以用于特征提取和特征增加</p>
-<h3 id="2-3-MaxPool-amp-AveragePool"><a href="#2-3-MaxPool-amp-AveragePool" class="headerlink" title="2.3. MaxPool &amp; AveragePool"></a>2.3. MaxPool &amp; AveragePool</h3><p>特点：不增加训练参数，对特征直接进行筛选或者一视同仁</p>
-<h2 id="3-网络结构单元"><a href="#3-网络结构单元" class="headerlink" title="3. 网络结构单元"></a>3. 网络结构单元</h2><h3 id="3-1-AlexNet"><a href="#3-1-AlexNet" class="headerlink" title="3.1. AlexNet"></a>3.1. AlexNet</h3><p><img src="/public/img/alexnet.jpeg" alt=""></p>
-<p>整个AlexNet网络共12层，为线性结构，包括输入层×1、卷积层×5、池化层×3、全连接层×3，示意图中隐藏了池化层。这个深度很重要:去掉任何卷积层(每个不超过模型参数的1%)都会导致性能表现低下。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>激活函数 Relu： 简单，更容易训练，</li>
-<li>Dropout</li>
-</ul>
-<h3 id="3-2-VGG"><a href="#3-2-VGG" class="headerlink" title="3.2. VGG"></a>3.2. VGG</h3><p>虽然AlexNet指明了深度卷积神经网络可以取得出色的结果，但并没有提供简单的规则以指导后来的研究者如何设计新的网络。VGG和AlexNet相比，深度更深，参数更多(1.38亿)，效果和可移植性更好。</p>
-<p>VGG块的组成规律是：连续使用数个相同的填充为1、窗口形状为3×3的卷积层后接上一个步幅为2、窗口形状为2×2的最大池化层。卷积层保持输入的高和宽不变，而池化层则对其减半。</p>
-<p><strong>特点</strong>：</p>
-<ul>
-<li>vgg-block内的卷积层都是同结构的</li>
-<li>池化层都得上一层的卷积层特征缩减一半</li>
-<li>深度较深，参数量够大</li>
-<li>较小的filter size/kernel size： 使得训练参数更少，多次小kernel size比单个大kernel size更具有识别力</li>
-</ul>
-<h3 id="3-3-NetWork-In-Network"><a href="#3-3-NetWork-In-Network" class="headerlink" title="3.3. NetWork In Network"></a>3.3. NetWork In Network</h3><blockquote>
-<p>参考 <a href="https://zhuanlan.zhihu.com/p/108235295" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/108235295</a></p>
-</blockquote>
-<p>Network in Network提出了一种全新的模型设计：用微型网络层MLP代替了传统conv层；用GAP全局平均池化代替了传统的FC层实现分类输出。</p>
-<p><strong>mlp概述</strong>：</p>
 <ol>
-<li>本身和卷积层兼容，且为深度模型，符合特征重用的思想；其中的全连接层等价于1×1卷积。</li>
-<li>为局部特征块提取出更抽象的特征，从而在送入下一层之前，增加抽象性，从而提高模型整体的通用性。</li>
+<li><a href="https://wwwmpa.mpa-garching.mpg.de/gadget/" target="_blank" rel="noopener">Gadget 2</a></li>
+<li><a href="http://flash.uchicago.edu/site/research/" target="_blank" rel="noopener">Flash</a></li>
 </ol>
-<p><strong>GAP概述</strong>：</p>
-<ol>
-<li>没有了全连接层，减少了大量需要学习的参数，也降低了FC层过拟合的发生，起到正则化器的效果。</li>
-<li>增强了特征映射和类别之间的对应关系，更符合卷积的结构，因此特征图就更容易对应上最后要输出分类的类别置信度</li>
-</ol>
-<h3 id="3-4-GoogLeNet-Inception"><a href="#3-4-GoogLeNet-Inception" class="headerlink" title="3.4. GoogLeNet Inception"></a>3.4. GoogLeNet Inception</h3><blockquote>
-<p>参考</p>
-<ol>
-<li><a href="https://zhuanlan.zhihu.com/p/108414921" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/108414921</a></li>
-<li><a href="https://my.oschina.net/u/876354/blog/1637819" target="_blank" rel="noopener">https://my.oschina.net/u/876354/blog/1637819</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/100668087" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/100668087</a></li>
-</ol>
-</blockquote>
-<p><strong>Inception块特点</strong>：</p>
-<ul>
-<li>Inception块之间可以堆叠使用。</li>
-<li>添加了1×1卷积，降低输入的通道维度，避免参数过量影响训练</li>
-<li>多卷积核+池化的并行结构，通过合并层进行串联，实际上让网络具备了自动选择的能力，而不是人为地设置卷积或池化，或决定卷积核的尺寸。</li>
+<p>Gadget Flash Enzo Gasoline</p>
+<p>主要来自一些论文中的模拟，截取其中的动画，作为数据源。</p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><ul>
+<li>利用生成并合星系来模拟</li>
+<li>利用现有观测来并合星系来模拟</li>
 </ul>
-<p><strong>整个网络深度为22层(参数层共计22层),maxpool池化层5层。还添加了网络中间一些辅助分类器具，这是考虑到由于深度较深，整个模型训练完成可能耗时较长，且浅层网络可能对中间层产生的特征具有较强识别能力，故添加了辅助分类器可以在模型训练的中间阶段就进行分类。</strong>在整个训练过程中，辅助分类器对于损失的以0.3的权重加到总损失中；推断时，辅助网络将被丢弃。</p>
-<p>作者团队借鉴了在Network in Network中使用的1×1卷积，这里的目的有2个，其中最主要的用来降维，通 过降低通道数来削减参数量。这样带来的效果是：同等参数量的模型，可达到更深和更宽。</p>
-<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p><strong>网络加深的后果</strong></p>
-<p>在残差块这样的结构引入之前，如果一个神经网络模型的深度太深，可能会带来<strong>梯度消失</strong>和<strong>梯度爆炸</strong>的问题，随着一些<strong>正则化方法</strong>的应用可以缓解此问题，但是随着layer深度的继续加深，又带来了<strong>模型退化</strong>这样的问题。而添加了带shortcut的残差块结构之后，使得整个深度神经网络的层数可以大幅增加，变得更【深】，从而有时会带来更好的训练效果</p>
 
             </div>
             <hr/>
@@ -586,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fishszh.github.io/2020/07/14/deeplearning/wang-luo-jie-gou/">http://fishszh.github.io/2020/07/14/deeplearning/wang-luo-jie-gou/</a>
+                    <a href="http://fishszh.github.io/2020/07/16/project/gravity-b-galaxymerge/">http://fishszh.github.io/2020/07/16/project/gravity-b-galaxymerge/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -624,8 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">网络结构</span>
+                                <a href="/tags/Deep-Learning/">
+                                    <span class="chip bg-color">Deep Learning</span>
                                 </a>
                             
                         </div>
@@ -671,32 +604,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/16/project/gravity-a-wan-you-yin-li/">
+                <a href="/2020/07/19/project/gravity/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a18.jpg" class="responsive-img" alt="Gravity(A):万有引力公式">
+                        <img src="/medias/featureimages/a13.jpg" class="responsive-img" alt="Gravity系列">
                         
-                        <span class="card-title">Gravity(A):万有引力公式</span>
+                        <span class="card-title">Gravity系列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 设想1.1. 基本设想训练粒子在引力场中运动
-1.2. 目标1.2.1. 宽线区
-Single BH BLR云团的动力学
-两体运动
-SMBBH BLR粒子动力学
-SMBBH Merge 过程BLR粒子动力学
+                            设想试图实现宇宙演化系列，不晓得要多久。
+阶段目标单双势井中粒子轨迹
+习得单势井中万有引力公式，迭代更新粒子位置。
+双势井中，限制性三体问题
 
-1.2.2. 星系并合
+详见 Gravity(A):万有引力公式
+星系并合
+利用图像生成，再现星系并合过程
 
+详见 Gr
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
                         </span>
                         <span class="publish-author">
                             
@@ -728,37 +662,39 @@ SMBBH Merge 过程BLR粒子动力学
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/15/machine-learing/sun-shi-han-shu/">
+                <a href="/2020/07/16/project/gravity-a-wan-you-yin-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/a18.jpg" class="responsive-img" alt="损失函数">
+                        <img src="/medias/featureimages/a18.jpg" class="responsive-img" alt="Gravity(A):万有引力公式">
                         
-                        <span class="card-title">损失函数</span>
+                        <span class="card-title">Gravity(A):万有引力公式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-声明：本文内容参考了，网络中的一些资源，但时间久远，忘记了出处，所以有些没有指出参考文献。本文也仅作为记录自己学习笔记。若原创觉得有异议请告知。参考资料：
+                            1. 设想1.1. 基本设想训练粒子在引力场中运动
+1.2. 目标1.2.1. 宽线区
+Single BH BLR云团的动力学
+两体运动
+SMBBH BLR粒子动力学
+SMBBH Merge 过程BLR粒子动力学
 
-正则化如何防止过拟合
+1.2.2. 星系并合
 
-
-正则化在实际应用时，如果样本容量不远远大于样本的特征维
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/Project/" class="post-category">
+                                    Project
                                 </a>
                             
                             
@@ -768,8 +704,8 @@ SMBBH Merge 过程BLR粒子动力学
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">损失函数</span>
+                    <a href="/tags/Deep-Learning/">
+                        <span class="chip bg-color">Deep Learning</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>Gravity系列</title>
+      <link href="/2020/07/19/project/gravity/"/>
+      <url>/2020/07/19/project/gravity/</url>
+      
+        <content type="html"><![CDATA[<h2 id="设想"><a href="#设想" class="headerlink" title="设想"></a>设想</h2><p>试图实现宇宙演化系列，不晓得要多久。</p><h2 id="阶段目标"><a href="#阶段目标" class="headerlink" title="阶段目标"></a>阶段目标</h2><h3 id="单双势井中粒子轨迹"><a href="#单双势井中粒子轨迹" class="headerlink" title="单双势井中粒子轨迹"></a>单双势井中粒子轨迹</h3><ul><li>习得单势井中万有引力公式，迭代更新粒子位置。</li><li>双势井中，限制性三体问题</li></ul><p>详见 <a href="./Gravity(A)万有引力.md">Gravity(A):万有引力公式</a></p><h3 id="星系并合"><a href="#星系并合" class="headerlink" title="星系并合"></a>星系并合</h3><ul><li>利用图像生成，再现星系并合过程</li></ul><p>详见 <a href="./Gravity(B)GalaxyMerge.md">Gravity(B):Galaxy merge</a></p><h3 id="大尺度结构"><a href="#大尺度结构" class="headerlink" title="大尺度结构"></a>大尺度结构</h3><ul><li>模拟从最初的扰动到宇宙大尺度结构生成</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>星系并合</title>
+      <link href="/2020/07/16/project/gravity-b-galaxymerge/"/>
+      <url>/2020/07/16/project/gravity-b-galaxymerge/</url>
+      
+        <content type="html"><![CDATA[<h2 id="设想"><a href="#设想" class="headerlink" title="设想"></a>设想</h2><h3 id="基本设想"><a href="#基本设想" class="headerlink" title="基本设想"></a>基本设想</h3><p>星系并合过程再生成</p><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><h4 id="生成星系图像"><a href="#生成星系图像" class="headerlink" title="生成星系图像"></a>生成星系图像</h4><p>知识有限，尝试用GoogLeNet—VAE来生成fake并合星系。</p><h4 id="终极目标"><a href="#终极目标" class="headerlink" title="终极目标"></a>终极目标</h4><p>逆向分析出并合星系的参数，用来模型重组。</p><h3 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h3><ul><li>采用LSTM训练</li><li>数据比较少，初始条件的并合星系，要先通过一个模型来学习生成</li><li>分析不同并合阶段的并合过程</li></ul><h2 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><blockquote><p>数据来源：</p></blockquote><ol><li><a href="https://wwwmpa.mpa-garching.mpg.de/gadget/" target="_blank" rel="noopener">Gadget 2</a></li><li><a href="http://flash.uchicago.edu/site/research/" target="_blank" rel="noopener">Flash</a></li></ol><p>Gadget Flash Enzo Gasoline</p><p>主要来自一些论文中的模拟，截取其中的动画，作为数据源。</p><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><ul><li>利用生成并合星系来模拟</li><li>利用现有观测来并合星系来模拟</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Gravity(A):万有引力公式</title>
+      <link href="/2020/07/16/project/gravity-a-wan-you-yin-li/"/>
+      <url>/2020/07/16/project/gravity-a-wan-you-yin-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-设想"><a href="#1-设想" class="headerlink" title="1. 设想"></a>1. 设想</h2><h3 id="1-1-基本设想"><a href="#1-1-基本设想" class="headerlink" title="1.1. 基本设想"></a>1.1. 基本设想</h3><p>训练粒子在引力场中运动</p><h3 id="1-2-目标"><a href="#1-2-目标" class="headerlink" title="1.2. 目标"></a>1.2. 目标</h3><h4 id="1-2-1-宽线区"><a href="#1-2-1-宽线区" class="headerlink" title="1.2.1. 宽线区"></a>1.2.1. 宽线区</h4><ul><li>Single BH BLR云团的动力学</li><li>两体运动</li><li>SMBBH BLR粒子动力学</li><li>SMBBH Merge 过程BLR粒子动力学</li></ul><h4 id="1-2-2-星系并合"><a href="#1-2-2-星系并合" class="headerlink" title="1.2.2. 星系并合"></a>1.2.2. 星系并合</h4><ul><li>动力学过程</li><li>后期再补上能量转化过程</li></ul><h4 id="1-2-3-终极目标"><a href="#1-2-3-终极目标" class="headerlink" title="1.2.3. 终极目标"></a>1.2.3. 终极目标</h4><p>宇宙演化：混沌初开–星系形成</p><p>目前只有动力学设想，没有能量转化过程。</p><p>就是不晓得要消耗多少资源</p><h2 id="2-开干"><a href="#2-开干" class="headerlink" title="2. 开干"></a>2. 开干</h2><h3 id="2-1-基本假设"><a href="#2-1-基本假设" class="headerlink" title="2.1. 基本假设"></a>2.1. 基本假设</h3><ul><li>只考虑二维图像（其实三维也可以）</li><li>不考虑粒子间相互作用</li><li>模型(LSTM)</li></ul><h3 id="2-2-阶段一：-实现粒子的单双势井轨道"><a href="#2-2-阶段一：-实现粒子的单双势井轨道" class="headerlink" title="2.2. 阶段一： 实现粒子的单双势井轨道"></a>2.2. 阶段一： 实现粒子的单双势井轨道</h3><h4 id="2-2-1-数据生成"><a href="#2-2-1-数据生成" class="headerlink" title="2.2.1. 数据生成"></a>2.2.1. 数据生成</h4><ul><li>单势井  </li><li>轨道参数</li></ul><h4 id="2-2-2-损失函数"><a href="#2-2-2-损失函数" class="headerlink" title="2.2.2. 损失函数"></a>2.2.2. 损失函数</h4><p><strong>方式一</strong>：</p><p>单个粒子轨迹仅与下一时刻比较</p><p>$$<br>L_1 = \frac{\sum (\mathbf{\hat{rv}_i^{t+1}} - \mathbf{rv_i^{t}})^2}{\sum (\mathbf{rv_i^{t+1}} - \mathbf{rv_i^{t}})^2}<br>$$</p><p><strong>方式二</strong>：</p><p>已知某一时刻，粒子的位置$r$，速度$v$和加速度$a$，将损失函数改为$r$和$v$变化与$v$和$a$的余弦相似度,来定义方向。</p><p>$$<br>L_{2} = - \sum (-coss\ similary(r,\hat{r})-coss\ similary(v,\hat{v})+(|r|-|\hat{r}|)^2 + (|v|-|\hat{v}|)^2)<br>$$</p><p>最佳$L_2 = -2$</p><h4 id="2-2-3-模型"><a href="#2-2-3-模型" class="headerlink" title="2.2.3. 模型"></a>2.2.3. 模型</h4><p>简单的全连接层，参数并不多。</p><pre class="line-numbers language-pthon"><code class="language-pthon">model =  tf.keras.Sequential([    tf.keras.layers.Dense(20, activation='relu'),    tf.keras.layers.Dense(100, activation='relu'),    tf.keras.layers.Dense(50, activation='relu'),    tf.keras.layers.Dense(4)])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样一个模型可以模拟多级泰勒展开，应该是最简单的模型了，表现应该比较稳定。</p><h4 id="2-2-4-Fitting"><a href="#2-2-4-Fitting" class="headerlink" title="2.2.4. Fitting"></a>2.2.4. Fitting</h4><h5 id="2-2-4-1-测试一-L1"><a href="#2-2-4-1-测试一-L1" class="headerlink" title="2.2.4.1. 测试一 L1"></a>2.2.4.1. 测试一 L1</h5><p>考虑二维轨道平面，输入为<code>[rx,ry,vx,vy]</code>输出为<code>[rx,ry,vx,vy]</code></p><p>效果并不理想，最终单步精度基本稳定在$10^{-5}$的更新步长上，但几乎无法达到与样本相同的精度。而且轨道积分本来要求精度就比较高，而且这个模型的Loss并没有考虑到其中的物理机制，多步积分后将一无是处。</p><h5 id="2-2-4-2-测试二-L2"><a href="#2-2-4-2-测试二-L2" class="headerlink" title="2.2.4.2. 测试二 L2"></a>2.2.4.2. 测试二 L2</h5><p>鉴于上一个Loss的问题，改用余弦相似度。但其中的问题，似乎就变了味道，这样只能说这个model是一个简单的迭代器了，与初忠还有很大差距，属于作弊行为，也许现在知识储备不足，等有能力了再继续按设想的开发。</p><p>考虑二维轨道平面，输入为<code>[rx,ry,vx,vy]</code>输出为<code>[vx,vy,ax,ay]</code></p><p>$L_2$最终不断下降，经过50k个epoch后，基本稳定在$8\times10^{-3}$,主要问题在加速度的估计上，这也是变化最大的一项。</p><h5 id="result"><a href="#result" class="headerlink" title="result"></a>result</h5><p>$L_2$结果:</p><ul><li>圆轨道表现不错</li><li>偏心率变大后，问题逐渐显现</li><li>多步积分后，轨道会变得不稳定，在与训练数据相同更新步长的情况下，最多只能维持半个轨道。</li><li>轨道半径比较小的粒子，轨道更不稳定</li></ul><p>图就不放了，太丑了。还是需要一个迭代器，来保证精度。</p><h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><ul><li>Loss 的设置要经过深思熟虑</li><li>数据集比较小，模型简单时，数据的读取过程会成为GPU训练速度的瓶颈，<code>cache()</code>会有很大帮助。</li><li>余弦相似度，在后期更新过程会略显乏力，在这里体现在速度$v$变化上。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网络结构</title>
       <link href="/2020/07/14/deeplearning/wang-luo-jie-gou/"/>
       <url>/2020/07/14/deeplearning/wang-luo-jie-gou/</url>
@@ -71,6 +146,33 @@
         <tags>
             
             <tag> VS Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据预处理 2</title>
+      <link href="/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/"/>
+      <url>/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/</url>
+      
+        <content type="html"><![CDATA[<p>这里针对具体的应用场景，来总结一些需要注意的地方。</p><blockquote><p>仅仅是随笔，并不严谨！</p></blockquote><h2 id="文本预处理中"><a href="#文本预处理中" class="headerlink" title="文本预处理中"></a>文本预处理中</h2><h3 id="设置-MAX-WORDS"><a href="#设置-MAX-WORDS" class="headerlink" title="设置 MAX_WORDS"></a>设置 <code>MAX_WORDS</code></h3><p>仅考虑最高频的一些文本信息，但这里也有很多要注意的地方。对于单个文本和整个数据集都可以做类似的考虑。<br>这样可以大大节省计算成本，提高模型的准确率。</p><ul><li>类似于PCA（主成分分析）<ul><li>起到降维的功效</li></ul></li><li>但频率最高的词并不一定具有区分度，（比如：标点符号，副词。。）<ul><li>要做的真正的PCA,还是需要一些辅助手段的，比如</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+            <tag> 数据处理 </tag>
             
         </tags>
       
@@ -148,33 +250,6 @@
         <tags>
             
             <tag> TensorFlow </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数据预处理 2</title>
-      <link href="/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/"/>
-      <url>/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/</url>
-      
-        <content type="html"><![CDATA[<p>这里针对具体的应用场景，来总结一些需要注意的地方。</p><blockquote><p>仅仅是随笔，并不严谨！</p></blockquote><h2 id="文本预处理中"><a href="#文本预处理中" class="headerlink" title="文本预处理中"></a>文本预处理中</h2><h3 id="设置-MAX-WORDS"><a href="#设置-MAX-WORDS" class="headerlink" title="设置 MAX_WORDS"></a>设置 <code>MAX_WORDS</code></h3><p>仅考虑最高频的一些文本信息，但这里也有很多要注意的地方。对于单个文本和整个数据集都可以做类似的考虑。<br>这样可以大大节省计算成本，提高模型的准确率。</p><ul><li>类似于PCA（主成分分析）<ul><li>起到降维的功效</li></ul></li><li>但频率最高的词并不一定具有区分度，（比如：标点符号，副词。。）<ul><li>要做的真正的PCA,还是需要一些辅助手段的，比如</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> TensorFlow </tag>
-            
-            <tag> 数据处理 </tag>
             
         </tags>
       

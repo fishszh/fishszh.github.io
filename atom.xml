@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fishszh.github.io/"/>
-  <updated>2020-07-15T14:09:57.050Z</updated>
+  <updated>2020-07-19T09:29:04.183Z</updated>
   <id>http://fishszh.github.io/</id>
   
   <author>
@@ -15,6 +15,88 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gravity系列</title>
+    <link href="http://fishszh.github.io/2020/07/19/project/gravity/"/>
+    <id>http://fishszh.github.io/2020/07/19/project/gravity/</id>
+    <published>2020-07-18T16:00:00.000Z</published>
+    <updated>2020-07-19T09:29:04.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;设想&quot;&gt;&lt;a href=&quot;#设想&quot; class=&quot;headerlink&quot; title=&quot;设想&quot;&gt;&lt;/a&gt;设想&lt;/h2&gt;&lt;p&gt;试图实现宇宙演化系列，不晓得要多久。&lt;/p&gt;
+&lt;h2 id=&quot;阶段目标&quot;&gt;&lt;a href=&quot;#阶段目标&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Project" scheme="http://fishszh.github.io/categories/Project/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://fishszh.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>星系并合</title>
+    <link href="http://fishszh.github.io/2020/07/16/project/gravity-b-galaxymerge/"/>
+    <id>http://fishszh.github.io/2020/07/16/project/gravity-b-galaxymerge/</id>
+    <published>2020-07-15T16:00:00.000Z</published>
+    <updated>2020-07-19T09:28:52.445Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;设想&quot;&gt;&lt;a href=&quot;#设想&quot; class=&quot;headerlink&quot; title=&quot;设想&quot;&gt;&lt;/a&gt;设想&lt;/h2&gt;&lt;h3 id=&quot;基本设想&quot;&gt;&lt;a href=&quot;#基本设想&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Project" scheme="http://fishszh.github.io/categories/Project/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://fishszh.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gravity(A):万有引力公式</title>
+    <link href="http://fishszh.github.io/2020/07/16/project/gravity-a-wan-you-yin-li/"/>
+    <id>http://fishszh.github.io/2020/07/16/project/gravity-a-wan-you-yin-li/</id>
+    <published>2020-07-15T16:00:00.000Z</published>
+    <updated>2020-07-19T09:00:18.296Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-设想&quot;&gt;&lt;a href=&quot;#1-设想&quot; class=&quot;headerlink&quot; title=&quot;1. 设想&quot;&gt;&lt;/a&gt;1. 设想&lt;/h2&gt;&lt;h3 id=&quot;1-1-基本设想&quot;&gt;&lt;a href=&quot;#1-1-基本设想&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Project" scheme="http://fishszh.github.io/categories/Project/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://fishszh.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>网络结构</title>
@@ -101,6 +183,39 @@
   </entry>
   
   <entry>
+    <title>数据预处理 2</title>
+    <link href="http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/"/>
+    <id>http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-13T03:41:03.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这里针对具体的应用场景，来总结一些需要注意的地方。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;仅仅是随笔，并不严谨！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;文本预处理中&quot;&gt;&lt;a href=&quot;#文本预处理中&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
+    
+      <category term="数据处理" scheme="http://fishszh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于ML的一些Triger</title>
     <link href="http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/"/>
     <id>http://fishszh.github.io/2020/06/06/machine-learing/yi-xie-guan-jian-de-tiger/</id>
@@ -183,39 +298,6 @@
     
     
       <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据预处理 2</title>
-    <link href="http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/"/>
-    <id>http://fishszh.github.io/2020/06/06/deeplearning/shu-ju-yu-chu-li-2/</id>
-    <published>2020-06-05T16:00:00.000Z</published>
-    <updated>2020-06-13T03:41:03.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这里针对具体的应用场景，来总结一些需要注意的地方。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;仅仅是随笔，并不严谨！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;文本预处理中&quot;&gt;&lt;a href=&quot;#文本预处理中&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://fishszh.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="TensorFlow" scheme="http://fishszh.github.io/tags/TensorFlow/"/>
-    
-      <category term="数据处理" scheme="http://fishszh.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
